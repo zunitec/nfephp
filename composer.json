@@ -1,18 +1,10 @@
 {
-    "name": "nfephp",
+    "name": "zuni/nfephp",
     "type": "library",
     "description": "NFePHP é uma API para gerenciamento das comunicações entre o emitente de NFe e os serviços dos SEFAZ estaduais. Inteiramente construído em PHP para rodar sob qualquer sistema operacional.",
-    "keywords": ["nfe","nfephp"],
-    "homepage": "https://github.com/nfephp-org/nfephp",
+    "keywords": ["zuni-nfe","zuni-nfephp"],
+    "homepage": "https://github.com/zunitec/nfephp.git",
     "license": ["GPL 3", "LGPL 3"],
-    "authors": [
-        {
-            "name": "Roberto Machado",
-            "email": "roberto.machado@superig.com.br",
-            "homepage": "http://www.nfephp.org",
-            "role": "Developer"
-        }
-    ],
     "require": {
         "php": ">=5.3.0"
     },
