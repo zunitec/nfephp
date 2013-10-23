@@ -1,4 +1,7 @@
 <?php
+
+namespace libs;
+
 /**
  * Este arquivo é parte do projeto NFePHP - Nota Fiscal eletrônica em PHP.
  *
@@ -71,10 +74,6 @@
  *              Walber da Silva Sales <eng dot walber at gmail dot com>
  *
  */
-//define o caminho base da instalação do sistema
-if (!defined('PATH_ROOT')) {
-    define('PATH_ROOT', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
-}
 /**
  * Classe principal "CORE class"
  */
