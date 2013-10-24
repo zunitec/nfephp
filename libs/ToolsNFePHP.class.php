@@ -4954,7 +4954,7 @@ class ToolsNFePHP
  *
  */
 if(class_exists("SoapClient")){
-    class NFeSOAP2Client extends SoapClient {
+    class NFeSOAP2Client extends \SoapClient {
         function __doRequest($request, $location, $action, $version,$one_way = 0) {
             $request = str_replace(':ns1', '', $request);
             $request = str_replace('ns1:', '', $request);
@@ -4975,7 +4975,7 @@ if(class_exists("SoapClient")){
  * @name nfephpException
  *
  */
-class nfephpException extends Exception {
+class nfephpException extends \Exception {
     public function errorMessage() {
         $errorMsg = $this->getMessage()."\n";
         return $errorMsg;
