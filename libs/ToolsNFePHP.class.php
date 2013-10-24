@@ -1,6 +1,6 @@
 <?php
 
-namespace libs;
+namespace Zuni\NfePHP\libs;
 
 /**
  * Este arquivo é parte do projeto NFePHP - Nota Fiscal eletrônica em PHP.

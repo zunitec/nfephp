@@ -10,5 +10,6 @@
     },
     "autoload": {
         "psr-0": { "Zuni\\NfePHP": "" }
-    }
+    },
+    "target-dir": "Zuni/NfePHP"
 }
