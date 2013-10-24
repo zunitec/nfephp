@@ -1425,7 +1425,7 @@ class ToolsNFePHP
             //limpar erros anteriores que possam estar em memória
             libxml_clear_errors();
             // carrega o documento no DOM
-            $xmldoc = new DOMDocument('1.0', 'utf-8');
+            $xmldoc = new \DOMDocument('1.0', 'utf-8');
             $xmldoc->preservWhiteSpace = false; //elimina espaços em branco
             $xmldoc->formatOutput = false;
             // muito importante deixar ativadas as opçoes para limpar os espacos em branco
@@ -2740,7 +2740,7 @@ class ToolsNFePHP
             return false;
         }
         //tratar dados de retorno
-        $doc = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+        $doc = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
         $doc->formatOutput = false;
         $doc->preserveWhiteSpace = false;
         $doc->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -2770,13 +2770,13 @@ class ToolsNFePHP
        $nome = $doc->save($nome);
        $retInutNFe = $doc->getElementsByTagName("retInutNFe")->item(0);
        //preparar o processo de inutilização
-       $inut = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+       $inut = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
        $inut->formatOutput = false;
        $inut->preserveWhiteSpace = false;
        $inut->loadXML($dXML,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
        $inutNFe = $inut->getElementsByTagName("inutNFe")->item(0);
        //Processo completo solicitação + protocolo
-       $procInut = new DOMDocument('1.0', 'utf-8');; //cria objeto DOM
+       $procInut = new \DOMDocument('1.0', 'utf-8');; //cria objeto DOM
        $procInut->formatOutput = false;
        $procInut->preserveWhiteSpace = false;
        //cria a tag procInutNFe
@@ -4466,7 +4466,8 @@ class ToolsNFePHP
             $txtInfo .= "Upload Content Length=$info[upload_content_length]\n";
             $txtInfo .= "Start Transfer Time=$info[starttransfer_time]\n";
             $txtInfo .= "Redirect Time=$info[redirect_time]\n";
-            $txtInfo .= "Certinfo=$info[certinfo]\n";
+            $certInfo = print_r(implode(':', $info['certinfo']), true);
+            $txtInfo .= "Certinfo=$certInfo\n";
             $n = strlen($__xml);
             $x = stripos($__xml, "<");
             if ($x !== false){
@@ -4477,7 +4478,8 @@ class ToolsNFePHP
             $this->soapDebug = $data."\n\n".$txtInfo."\n".$__xml;
             if ($__xml === false || $x === false){
                 //não houve retorno
-                $msg = curl_error($oCurl) . $info['http_code'] . $cCode[$info['http_code']];
+                $code = $info['http_code'];
+                $msg = curl_error($oCurl) . $code . (array_key_exists($code, $cCode) ? $cCode[$code] : "");
                 throw new nfephpException($msg,self::STOP_CRITICAL);
             } else {
                 //houve retorno mas ainda pode ser uma mensagem de erro do webservice
