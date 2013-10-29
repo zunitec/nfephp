@@ -177,7 +177,7 @@ class DanfeNFePHP extends CommonNFePHP implements DocumentoNFePHP
        $this->exibirPIS = $exibirPIS;
        //se for passado o xml
        if ( !empty($this->xml) ) {
-            $this->dom = new DomDocument;
+            $this->dom = new \DomDocument();
             $this->dom->loadXML($this->xml);
             $this->nfeProc    = $this->dom->getElementsByTagName("nfeProc")->item(0);
             $this->infNFe     = $this->dom->getElementsByTagName("infNFe")->item(0);
@@ -600,7 +600,7 @@ class DanfeNFePHP extends CommonNFePHP implements DocumentoNFePHP
             $cdata = $parte2;
         }
         //carrega o xml CDATA em um objeto DOM
-        $dom = new DOMDocument('1.0', 'utf-8');
+        $dom = new \DOMDocument('1.0', 'utf-8');
         $dom->preservWhiteSpace = false; //elimina espaços em branco
         $dom->formatOutput = false;
         $dom->loadXML($cdata,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);

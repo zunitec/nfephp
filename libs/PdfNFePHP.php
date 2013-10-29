@@ -40,7 +40,7 @@ namespace Zuni\NfePHP\libs;
  */
 //require_once('FPDF/fpdf.php');
 
-class PdfNFePHP extends FPDF {
+class PdfNFePHP extends FPDF\FPDF {
     
     private $T128;                                             // tabela de codigos 128
     private $ABCset="";                                        // conjunto de caracteres legiveis em 128
