@@ -1889,7 +1889,7 @@ class ToolsNFePHP
         //verifica o retorno
         if ($retorno){
             //tratar dados de retorno
-            $doc = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $doc = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $doc->formatOutput = false;
             $doc->preserveWhiteSpace = false;
             $doc->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -2036,7 +2036,7 @@ class ToolsNFePHP
             //verifica o retorno
             if ($retorno){
                 //tratar dados de retorno
-                $doc = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+                $doc = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
                 $doc->formatOutput = false;
                 $doc->preserveWhiteSpace = false;
                 $doc->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -2137,7 +2137,7 @@ class ToolsNFePHP
                             if ( $protcStat == 100 || $protcStat == 110 || $protcStat == 301 || $protcStat == 302 ){
                                 $nomeprot = $this->temDir.$infProt->getElementsByTagName('chNFe')->item(0)->nodeValue.'-prot.xml';//id da nfe
                                 //salvar o protocolo em arquivo
-                                $novoprot = new DOMDocument('1.0', 'UTF-8');
+                                $novoprot = new \DOMDocument('1.0', 'UTF-8');
                                 $novoprot->formatOutput = true;
                                 $novoprot->preserveWhiteSpace = false;
                                 $pNFe = $novoprot->createElement("protNFe");
