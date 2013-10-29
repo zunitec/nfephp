@@ -1589,7 +1589,7 @@ class ToolsNFePHP
             //verifica o retorno do SOAP
             if ($retorno) {
                 //tratar dados de retorno
-                $doc = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+                $doc = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
                 $doc->formatOutput = false;
                 $doc->preserveWhiteSpace = false;
                 $doc->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
