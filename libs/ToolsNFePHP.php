@@ -1159,7 +1159,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg, self::STOP_CRITICAL);
             }
             //carrega o arquivo na variável
-            $docnfe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $docnfe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $docnfe->formatOutput = false;
             $docnfe->preserveWhiteSpace = false;
             $xmlnfe = file_get_contents($nfefile);
@@ -1183,7 +1183,7 @@ class ToolsNFePHP
             }
             //carrega o protocolo e seus dados
             //protocolo do lote enviado
-            $prot = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $prot = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $prot->formatOutput = false;
             $prot->preserveWhiteSpace = false;
             $xmlprot = file_get_contents($protfile);
@@ -1248,7 +1248,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg, self::STOP_CRITICAL);
             }
             //cria a NFe processada com a tag do protocolo
-            $procnfe = new DOMDocument('1.0', 'utf-8');
+            $procnfe = new \DOMDocument('1.0', 'utf-8');
             $procnfe->formatOutput = false;
             $procnfe->preserveWhiteSpace = false;
             //cria a tag nfeProc

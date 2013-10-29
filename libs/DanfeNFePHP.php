@@ -1,4 +1,7 @@
 <?php
+
+namespace Zuni\NfePHP\libs;
+
 /**
  * Este arquivo é parte do projeto NFePHP - Nota Fiscal eletrônica em PHP.
  *
@@ -55,9 +58,9 @@
  *
  */
 //define o caminho base da instalação do sistema
-if (!defined('PATH_ROOT')) {
-    define('PATH_ROOT', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
-}
+//if (!defined('PATH_ROOT')) {
+//    define('PATH_ROOT', dirname(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
+//}
 //ajuste do tempo limite de resposta do processo
 set_time_limit(1800);
 //definição do caminho para o diretorio com as fontes do FDPF
@@ -72,11 +75,11 @@ if (!defined('NFEPHP_SITUACAO_EXTERNA_CANCELADA')) {
 	define('NFEPHP_SITUACAO_EXTERNA_NONE', 0);
 }
 //classe extendida da classe FPDF para montagem do arquivo pdf
-require_once('PdfNFePHP.class.php');
+//require_once('PdfNFePHP.class.php');
 //classe com as funções communs entre DANFE e DACTE
-require_once('CommonNFePHP.class.php');
+//require_once('CommonNFePHP.class.php');
 //interface
-require_once('DocumentoNFePHP.interface.php');
+//require_once('DocumentoNFePHP.interface.php');
 
 //classe principal
 class DanfeNFePHP extends CommonNFePHP implements DocumentoNFePHP

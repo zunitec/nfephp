@@ -1,4 +1,7 @@
 <?php
+
+namespace Zuni\NfePHP\libs;
+
 /**
  * Este arquivo é parte do projeto NFePHP - Nota Fiscal eletrônica em PHP.
  *
@@ -35,7 +38,7 @@
  * auxiliares
  * 
  */
-require_once('FPDF/fpdf.php');
+//require_once('FPDF/fpdf.php');
 
 class PdfNFePHP extends FPDF {
     
