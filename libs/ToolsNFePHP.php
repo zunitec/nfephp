@@ -941,7 +941,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg);
             }
             // instancia novo objeto DOM
-            $dom = new DOMDocument('1.0', 'utf-8');
+            $dom = new \DOMDocument('1.0', 'utf-8');
             $dom->preserveWhiteSpace = false; //elimina espaços em branco
             $dom->formatOutput = false;
             // carrega o xml tanto pelo string contento o xml como por um path
@@ -1324,7 +1324,7 @@ class ToolsNFePHP
                 $tagB2B = 'NFeB2BFin'; //padrão anfavea
             }
             //carrega o arquivo na variável
-            $docnfe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $docnfe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $docnfe->formatOutput = false;
             $docnfe->preserveWhiteSpace = false;
             $xmlnfe = file_get_contents($nfefile);
@@ -1343,7 +1343,7 @@ class ToolsNFePHP
             $chave = preg_replace('/[^0-9]/','', $id);
             //carrega o arquivo B2B e seus dados
             //protocolo do lote enviado
-            $b2b = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $b2b = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $b2b->formatOutput = false;
             $b2b->preserveWhiteSpace = false;
             $xmlb2b = file_get_contents($b2bfile);
@@ -1357,7 +1357,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg, self::STOP_CRITICAL);
             }
             //cria a NFe processada com a tag do protocolo
-            $procb2b = new DOMDocument('1.0', 'utf-8');
+            $procb2b = new \DOMDocument('1.0', 'utf-8');
             $procb2b->formatOutput = false;
             $procb2b->preserveWhiteSpace = false;
             //cria a tag nfeProc
@@ -2278,7 +2278,7 @@ class ToolsNFePHP
             }
             //tratar dados de retorno
             $indCont = 0;
-            $xmlLNFe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlLNFe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlLNFe->formatOutput = false;
             $xmlLNFe->preserveWhiteSpace = false;
             $xmlLNFe->loadXML($retorno, LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -2486,7 +2486,7 @@ class ToolsNFePHP
                 $this->__setError($msg);
             }
             //tratar dados de retorno
-            $xmlDNFe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlDNFe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlDNFe->formatOutput = false;
             $xmlDNFe->preserveWhiteSpace = false;
             $xmlDNFe->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -2539,7 +2539,7 @@ class ToolsNFePHP
                //elemento "JR14_procNFe" contendo a estrutura “nfeProc”, já descompactada.
                $nfeProc = $xmlDNFe->getElementsByTagName("nfeProc")->item(0);
                //cria novo documento DOM para importar e adicionar o elemento
-               $dom = new DOMDocument('1.0', 'UTF-8');
+               $dom = new \DOMDocument('1.0', 'UTF-8');
                $dom->formatOutput = false;
                $dom->preserveWhiteSpace = false;
                // Importa o node e todo o seu conteudo e acrescenta ao node principal
@@ -2946,7 +2946,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg);
             }
             //tratar dados de retorno
-            $xmlretEvent = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlretEvent = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlretEvent->formatOutput = false;
             $xmlretEvent->preserveWhiteSpace = false;
             $xmlretEvent->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -2981,13 +2981,13 @@ class ToolsNFePHP
             }
             //o evento foi aceito cStat == 135 ou cStat == 155
             //carregar o evento
-            $xmlenvEvento = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlenvEvento = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlenvEvento->formatOutput = false;
             $xmlenvEvento->preserveWhiteSpace = false;
             $xmlenvEvento->loadXML($Ev,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
             $evento = $xmlenvEvento->getElementsByTagName("evento")->item(0);
             //Processo completo solicitação + protocolo
-            $xmlprocEvento = new DOMDocument('1.0', 'utf-8');; //cria objeto DOM
+            $xmlprocEvento = new \DOMDocument('1.0', 'utf-8');; //cria objeto DOM
             $xmlprocEvento->formatOutput = false;
             $xmlprocEvento->preserveWhiteSpace = false;
             //cria a tag procEventoNFe
@@ -3195,7 +3195,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg);
             }
             //tratar dados de retorno
-            $xmlretCCe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlretCCe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlretCCe->formatOutput = false;
             $xmlretCCe->preserveWhiteSpace = false;
             $xmlretCCe->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -3216,13 +3216,13 @@ class ToolsNFePHP
             }
             //a correção foi aceita cStat == 135
             //carregar a CCe
-            $xmlenvCCe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlenvCCe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlenvCCe->formatOutput = false;
             $xmlenvCCe->preserveWhiteSpace = false;
             $xmlenvCCe->loadXML($Ev,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
             $evento = $xmlenvCCe->getElementsByTagName("evento")->item(0);
             //Processo completo solicitação + protocolo
-            $xmlprocCCe = new DOMDocument('1.0', 'utf-8');; //cria objeto DOM
+            $xmlprocCCe = new \DOMDocument('1.0', 'utf-8');; //cria objeto DOM
             $xmlprocCCe->formatOutput = false;
             $xmlprocCCe->preserveWhiteSpace = false;
             //cria a tag procEventoNFe
@@ -3445,7 +3445,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg);
             }
             //tratar dados de retorno
-            $xmlMDe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlMDe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlMDe->formatOutput = false;
             $xmlMDe->preserveWhiteSpace = false;
             $xmlMDe->loadXML($retorno,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -3475,13 +3475,13 @@ class ToolsNFePHP
                 throw new nfephpException($msg);
             }
             //o evento foi aceito
-            $xmlenvMDe = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $xmlenvMDe = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $xmlenvMDe->formatOutput = false;
             $xmlenvMDe->preserveWhiteSpace = false;
             $xmlenvMDe->loadXML($Ev,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
             $evento = $xmlenvMDe->getElementsByTagName("evento")->item(0);
             //Processo completo solicitação + protocolo
-            $xmlprocMDe = new DOMDocument('1.0', 'utf-8');; //cria objeto DOM
+            $xmlprocMDe = new \DOMDocument('1.0', 'utf-8');; //cria objeto DOM
             $xmlprocMDe->formatOutput = false;
             $xmlprocMDe->preserveWhiteSpace = false;
             //cria a tag procEventoNFe
@@ -3677,7 +3677,7 @@ class ToolsNFePHP
     protected function __verifySignatureXML($conteudoXML, $tag, &$err){
         // Habilita a manipulaçao de erros da libxml
         libxml_use_internal_errors(true);
-        $dom = new DOMDocument('1.0', 'utf-8');
+        $dom = new \DOMDocument('1.0', 'utf-8');
         $dom->preserveWhiteSpace = false;
         $dom->formatOutput = false;
         $dom->loadXML($conteudoXML,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -3745,7 +3745,7 @@ class ToolsNFePHP
             }
             //como a ssinatura confere, consultar o SEFAZ para verificar se a NF não foi cancelada ou é FALSA
             //carrega o documento no DOM
-            $xmldoc = new DOMDocument('1.0', 'utf-8');
+            $xmldoc = new \DOMDocument('1.0', 'utf-8');
             $xmldoc->preservWhiteSpace = false; //elimina espaços em branco
             $xmldoc->formatOutput = false;
             $xmldoc->loadXML($xml,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
@@ -4656,7 +4656,7 @@ class ToolsNFePHP
             //limpar erros anteriores que possam estar em memória
             libxml_clear_errors();
             //carrega o xml de retorno com o erro 239
-            $doc = new DOMDocument('1.0', 'utf-8'); //cria objeto DOM
+            $doc = new \DOMDocument('1.0', 'utf-8'); //cria objeto DOM
             $doc->formatOutput = false;
             $doc->preserveWhiteSpace = false;
             $doc->loadXML($xml,LIBXML_NOBLANKS | LIBXML_NOEMPTYTAG);
