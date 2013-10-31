@@ -4563,7 +4563,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg, self::STOP_CRITICAL);
             }
             //buscar o ultimo NSU no xml
-            $xml = new SimpleXMLElement($nsufile,null,true);
+            $xml = new \SimpleXMLElement($nsufile,null,true);
             $searchString = '/NSU/UF[@sigla="'.$sigla.'" and @tpAmb="'.$tpAmb.'"]';
             $ufn = $xml->xpath($searchString);
             $ultNSU = (string) $ufn[0]->ultNSU[0];
@@ -4602,7 +4602,7 @@ class ToolsNFePHP
                 throw new nfephpException($msg, self::STOP_CRITICAL);
             }
             //buscar o ultimo NSU no xml
-            $xml = new SimpleXMLElement($nsufile,null,true);
+            $xml = new \SimpleXMLElement($nsufile,null,true);
             $searchString = '/NSU/UF[@sigla="'.$sigla.'" and @tpAmb="'.$tpAmb.'"]';
             $ufn = $xml->xpath($searchString);
             if ($ufn[0]->ultNSU[0] != ''){
