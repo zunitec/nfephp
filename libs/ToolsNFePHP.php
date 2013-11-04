@@ -2342,7 +2342,7 @@ class ToolsNFePHP
                         'xNome'=>$xNome,
                         'dEmi'=>$dEmi,
                         'dhRecbto'=>$dhRecbto,
-                        '$tpNF'=>$tpNF,
+                        'tpNF'=>$tpNF,
                         'cSitNFe'=>$cSitNFe,
                         'cSitconf'=>$cSitConf,
                         'NSU'=>$nsu, 'IE'=>$ie, 'vNF'=>$vNF, 'digVal'=>$digVal
