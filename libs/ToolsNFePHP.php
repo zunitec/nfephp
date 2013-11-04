@@ -2331,6 +2331,10 @@ class ToolsNFePHP
                     $tpNF = $resNFe->getElementsByTagName('tpNF')->item(0)->nodeValue;
                     $cSitNFe = $resNFe->getElementsByTagName('cSitNFe')->item(0)->nodeValue;
                     $cSitConf = $resNFe->getElementsByTagName('cSitConf')->item(0)->nodeValue;
+                    $vNF = $resNFe->getElementsByTagName('vNF')->item(0)->nodeValue;
+                    $digVal = $resNFe->getElementsByTagName('digVal')->item(0)->nodeValue;
+                    $nsu = $resNFe->getAttribute('NSU');
+                    $ie = $resNFe->getElementsByTagName('IE')->item(0)->nodeValue;
                     $aNFe[] = array(
                         'chNFe'=>$chNFe,
                         'NSU'=>$nsu,
@@ -2340,7 +2344,8 @@ class ToolsNFePHP
                         'dhRecbto'=>$dhRecbto,
                         '$tpNF'=>$tpNF,
                         'cSitNFe'=>$cSitNFe,
-                        'cSitconf'=>$cSitConf
+                        'cSitconf'=>$cSitConf,
+                        'NSU'=>$nsu, 'IE'=>$ie, 'vNF'=>$vNF, 'digVal'=>$digVal
                     );
                 }//fim resNFe
                 if (isset($resCanc)) {
