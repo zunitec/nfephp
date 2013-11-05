@@ -1,4 +1,7 @@
 <?php
+
+namespace Zuni\NfePHP\libs;
+
 /**
  * Este arquivo é parte do projeto NFePHP - Nota Fiscal eletrônica em PHP.
  *
@@ -45,11 +48,11 @@ if (!defined('FPDF_FONTPATH')) {
     define('FPDF_FONTPATH','font/');
 }
 //classe extendida da classe FPDF para montagem do arquivo pdf
-require_once('PdfNFePHP.class.php');
+//require_once('PdfNFePHP.class.php');
 //classe com as funções communs entre DANFE e DACTE
-require_once('CommonNFePHP.class.php');
+//require_once('CommonNFePHP.class.php');
 
-class DacceNFePHP extends CommonNFePHP {
+class DacceNFePHP extends Zuni\NfePHP\libs\CommonNFePHP {
 
     //publicas
     public $logoAlign='C'; //alinhamento do logo
@@ -149,7 +152,7 @@ class DacceNFePHP extends CommonNFePHP {
             exit();
         }
         $docxml = file_get_contents($xmlfile);
-        $this->dom = new DomDocument;
+        $this->dom = new \DomDocument;
         $this->dom->loadXML($docxml);
         $this->procEventoNFe    = $this->dom->getElementsByTagName("procEventoNFe")->item(0);
         $this->evento           = $this->dom->getElementsByTagName("evento")->item(0);
