@@ -52,7 +52,7 @@ if (!defined('FPDF_FONTPATH')) {
 //classe com as funções communs entre DANFE e DACTE
 //require_once('CommonNFePHP.class.php');
 
-class DacceNFePHP extends Zuni\NfePHP\libs\CommonNFePHP {
+class DacceNFePHP extends CommonNFePHP {
 
     //publicas
     public $logoAlign='C'; //alinhamento do logo
