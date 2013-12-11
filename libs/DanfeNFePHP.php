@@ -419,9 +419,9 @@ class DanfeNFePHP extends CommonNFePHP implements DocumentoNFePHP
         $flagVTT = $flagVTT && strpos(strtolower(trim($this->textoAdic)),'aprox');
         $flagVTT = $flagVTT && (strpos(strtolower(trim($this->textoAdic)),'trib') || strpos(strtolower(trim($this->textoAdic)),'imp'));
         $vTotTrib = !empty($this->ICMSTot->getElementsByTagName("vTotTrib")->item(0)->nodeValue) ? $this->ICMSTot->getElementsByTagName("vTotTrib")->item(0)->nodeValue : '';
-        if ($vTotTrib != '' && !$flagVTT) {
-            $this->textoAdic .= "\n Valor Aproximado dos Tributos : R$ " . number_format($vTotTrib, 2, ",", ".");
-        }
+//        if ($vTotTrib != '' && !$flagVTT) {
+//            $this->textoAdic .= "\n Valor Aproximado dos Tributos : R$ " . number_format($vTotTrib, 2, ",", ".");
+//        }
         //fim da alteração NT 2013.003 Lei da Transparência
 
         $this->textoAdic = str_replace( ";" , "\n" , $this->textoAdic );
